@@ -1,9 +1,0 @@
-terminal length 0
-show clock
-show interface status
-show running-config
-show startup-config
-show cdp nei
-show spanning-tree
-show logging
-exit
