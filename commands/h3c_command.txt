@@ -1,0 +1,15 @@
+screen-length dis
+display clock
+display interface brief
+display cur
+display log
+display stp
+display stp brief
+display cpu-usage
+display memory
+display environment
+display fan
+display power
+display ip routing-table
+dis  version
+quit
