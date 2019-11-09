@@ -1,0 +1,1494 @@
+screen-length dis
+% Screen-length configuration is disabled for current user.
+<CNXM-COSW-1F10>display clock
+16:54:32 UTC Thu 10/10/2019
+<CNXM-COSW-1F10>display interface brief
+The brief information of interface(s) under route mode:
+Link: ADM - administratively down; Stby - standby
+Protocol: (s) - spoofing
+Interface            Link Protocol Main IP         Description
+NULL0                UP   UP(s)    --
+Vlan1000             UP   UP       192.168.10.10
+
+The brief information of interface(s) under bridge mode:
+Link: ADM - administratively down; Stby - standby
+Speed or Duplex: (a)/A - auto; H - half; F - full
+Type: A - access; T - trunk; H - hybrid
+Interface            Link Speed   Duplex Type PVID Description
+BAGG1                UP   20G(a)  F(a)   T    1    *** TO CNXM-CoreSW-S7506E *
+GE1/0/1              UP   100M(a) F(a)   A    213  ***swiping card***
+GE1/0/2              UP   1G(a)   F(a)   A    1050 ***AP-1***
+GE1/0/3              UP   1G(a)   F(a)   A    1050 ***AP-5***
+GE1/0/4              UP   100M(a) F(a)   A    213  ***Ecard***
+GE1/0/5              UP   100M(a) F(a)   A    213  ***Ecard***
+GE1/0/6              DOWN auto    A      A    216
+GE1/0/7              DOWN auto    A      A    216
+GE1/0/8              DOWN auto    A      A    100
+GE1/0/9              DOWN auto    A      A    216
+GE1/0/10             DOWN auto    A      A    216
+GE1/0/11             DOWN auto    A      A    216
+GE1/0/12             DOWN auto    A      A    216
+GE1/0/13             DOWN auto    A      A    216
+GE1/0/14             DOWN auto    A      A    216
+GE1/0/15             DOWN auto    A      A    216
+GE1/0/16             DOWN auto    A      A    216
+GE1/0/17             DOWN auto    A      A    216
+GE1/0/18             DOWN auto    A      A    216
+GE1/0/19             DOWN auto    A      A    216
+GE1/0/20             DOWN auto    A      A    216
+GE1/0/21             DOWN auto    A      A    216
+GE1/0/22             UP   1G(a)   F(a)   T    1    ISP&America
+GE1/0/23             UP   1G(a)   F(a)   T    1    To CNXM-ACSW-1F12 g1/0/48
+GE1/0/24             UP   1G(a)   F(a)   T    1    To CNXM-ACSW-1F11 g1/0/48
+GE1/0/25             ADM  auto    A      A    1
+GE1/0/26             ADM  auto    A      A    1
+GE1/0/27             ADM  auto    A      A    1
+GE1/0/28             ADM  auto    A      A    1
+XGE1/1/1             UP   10G(a)  F      T    1    CNXM-CoreSW-S7506 G1/2/0/1
+XGE1/1/2             UP   10G(a)  F      T    1    CNXM-CoreSW-S7506 G2/2/0/1
+
+<CNXM-COSW-1F10>display cur
+#
+ version 5.20, Release 2220P02
+#
+ sysname CNXM-COSW-1F10
+#
+ irf mac-address persistent always
+ irf auto-update enable
+ undo irf link-delay
+#
+ domain default enable system
+#
+ telnet server enable
+#
+ loopback-detection enable
+#
+ undo ip http enable
+#
+ password-recovery enable
+#
+vlan 1
+#
+vlan 100
+ description America-vpn
+#
+vlan 101
+ description ISP_10M
+#
+vlan 206
+ description PBX
+#
+vlan 213
+ description Ecard
+#
+vlan 216
+ description Meeting
+#
+vlan 234
+ description IT-Test
+#
+vlan 1000
+ description Manager
+#
+vlan 1050
+ description AP-Manager
+#
+domain system
+ access-limit disable
+ state active
+ idle-cut disable
+ self-service-url disable
+#
+user-group system
+ group-attribute allow-guest
+#
+local-user admin
+ password cipher $c$3$9eiq2HDOD87wBnXHHEO0nr7WWOShJEEELi+r
+ authorization-attribute level 3
+ service-type telnet
+local-user gj
+ password cipher $c$3$YSIqstYrkjbe86EFXYR5dixyC+F5gc6odA==
+ authorization-attribute level 3
+ service-type telnet
+#
+ stp enable
+#
+interface Bridge-Aggregation1
+ description *** TO CNXM-CoreSW-S7506E ***
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 206 213 216 234 1000 1050
+ stp disable
+ dhcp-snooping trust
+#
+interface NULL0
+#
+interface Vlan-interface1000
+ ip address 192.168.10.10 255.255.255.0
+#
+interface GigabitEthernet1/0/1
+ port link-mode bridge
+ description ***swiping card***
+ port access vlan 213
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/2
+ port link-mode bridge
+ description ***AP-1***
+ port access vlan 1050
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/3
+ port link-mode bridge
+ description ***AP-5***
+ port access vlan 1050
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/4
+ port link-mode bridge
+ description ***Ecard***
+ port access vlan 213
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/5
+ port link-mode bridge
+ description ***Ecard***
+ port access vlan 213
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/6
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/7
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/8
+ port link-mode bridge
+ port access vlan 100
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/9
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/10
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/11
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/12
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/13
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/14
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/15
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/16
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/17
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/18
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/19
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/20
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/21
+ port link-mode bridge
+ port access vlan 216
+ loopback-detection enable
+#
+interface GigabitEthernet1/0/22
+ port link-mode bridge
+ description ISP&America
+ port link-type trunk
+ port trunk permit vlan 1 100 to 101
+ loopback-detection enable
+ dhcp-snooping trust
+#
+interface GigabitEthernet1/0/23
+ port link-mode bridge
+ description To CNXM-ACSW-1F12 g1/0/48
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 100 to 101 213 216 234 1000 1050
+#
+interface GigabitEthernet1/0/24
+ port link-mode bridge
+ description To CNXM-ACSW-1F11 g1/0/48
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 100 to 101 206 213 216 234 1000 1050
+#
+interface GigabitEthernet1/0/25
+ port link-mode bridge
+ shutdown
+#
+interface GigabitEthernet1/0/26
+ port link-mode bridge
+ shutdown
+#
+interface GigabitEthernet1/0/27
+ port link-mode bridge
+ shutdown
+#
+interface GigabitEthernet1/0/28
+ port link-mode bridge
+ shutdown
+#
+interface Ten-GigabitEthernet1/1/1
+ port link-mode bridge
+ description CNXM-CoreSW-S7506 G1/2/0/1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 206 213 216 234 1000 1050
+ stp disable
+ port link-aggregation group 1
+ dhcp-snooping trust
+#
+interface Ten-GigabitEthernet1/1/2
+ port link-mode bridge
+ description CNXM-CoreSW-S7506 G2/2/0/1
+ port link-type trunk
+ undo port trunk permit vlan 1
+ port trunk permit vlan 206 213 216 234 1000 1050
+ stp disable
+ port link-aggregation group 1
+ dhcp-snooping trust
+#
+ dhcp-snooping
+#
+ ip route-static 0.0.0.0 0.0.0.0 192.168.10.254
+#
+ snmp-agent
+ snmp-agent local-engineid 800063A2035CDD7066753D
+ snmp-agent community read TpvTech1
+ snmp-agent sys-info version v2c v3
+ snmp-agent target-host trap address udp-domain 172.20.2.31 udp-port 161 params securityname TpvTech1
+#
+ ntp-service unicast-server 192.168.10.254
+#
+ load xml-configuration
+#
+ load tr069-configuration
+#
+user-interface aux 0
+user-interface vty 0 4
+ authentication-mode scheme
+user-interface vty 5 15
+#
+return
+<CNXM-COSW-1F10>display log
+Logging buffer configuration and contents:enabled
+Allowed max buffer size : 1024
+Actual buffer size : 512
+Channel number : 4 , Channel name : logbuffer
+Dropped messages : 0
+Overwritten messages : 930321
+Current messages : 512
+
+%Oct 10 08:13:09:993 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(341pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:13:09:994 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(660pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:14:05:148 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:14:07:175 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:14:09:612 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(289pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:14:09:612 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(763pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:15:09:208 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(159pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:17:30:922 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:17:31:765 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:18:10:014 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(342pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:18:10:014 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(656pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:18:34:158 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:18:35:886 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:19:10:629 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(351pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:19:10:630 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(649pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:20:36:381 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:20:37:099 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:20:37:916 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:20:39:171 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:20:48:844 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:20:49:745 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:21:10:891 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(495pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:21:10:891 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(868pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:21:53:756 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:21:54:586 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:10:496 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(449pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:22:10:496 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(727pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:22:24:724 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:24:725 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:26:187 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:26:490 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:28:320 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:22:28:672 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:23:10:357 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(558pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:23:10:358 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(442pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:24:20:335 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:24:21:855 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:24:22:328 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:24:23:845 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:25:10:585 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(304pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:25:10:586 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(694pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:26:27:044 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:26:27:785 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:26:28:358 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:26:29:170 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:27:10:018 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(480pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:27:10:019 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(869pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:34:48:442 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:34:50:257 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:35:10:901 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(633pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:35:10:902 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(512pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:35:20:486 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:35:21:110 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:36:10:526 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(402pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:36:10:527 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(596pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:41:37:650 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:41:38:559 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:41:47:519 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:41:48:549 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:42:10:326 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(384pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:42:10:327 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(680pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:52:25:080 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:52:26:934 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:53:10:010 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(336pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:53:10:011 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(664pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:56:07:365 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:56:09:169 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 08:56:11:008 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(395pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:56:11:009 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(739pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 08:57:10:605 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(71pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 08:57:10:606 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(135pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:02:57:215 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:02:57:687 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:02:58:703 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:02:59:327 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:03:11:229 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(344pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:03:11:230 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(656pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:03:17:617 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:03:19:536 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:04:11:837 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(348pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:04:11:838 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(497pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:08:27:251 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:08:28:743 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:09:11:889 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(461pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:09:11:889 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(539pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:09:23:383 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:09:23:683 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:10:11:504 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(335pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:10:11:504 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(663pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:13:11:305 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(78pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:13:12:018 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:13:12:063 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:14:11:949 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(467pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:14:11:950 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(713pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:30:12:771 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:30:14:319 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:31:11:227 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(405pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:31:11:228 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(683pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:37:16:860 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:37:18:789 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:37:40:712 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:37:41:548 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:38:11:567 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(456pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:38:11:567 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(839pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:47:53:219 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:47:53:681 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:47:54:460 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:47:55:392 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:48:11:802 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(604pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:48:11:802 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(394pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:53:39:742 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:53:40:997 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:54:11:566 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(492pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:54:11:567 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(567pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:56:48:051 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:56:48:963 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:56:57:518 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:56:59:012 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:57:11:463 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(379pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 09:57:11:464 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(621pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 09:59:41:610 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 09:59:43:015 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:00:11:260 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(514pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:00:11:260 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(658pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:00:58:206 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:00:59:854 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:01:11:029 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(299pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:01:11:029 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(712pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:06:14:348 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:06:15:072 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:06:15:959 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:06:17:249 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:07:11:761 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(431pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:07:11:762 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(570pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:07:54:872 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:07:56:304 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:08:11:697 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(403pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:08:11:697 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(597pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:25:37:394 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:25:39:234 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:26:11:545 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(291pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:26:11:546 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(709pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:27:03:535 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:27:04:586 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:27:11:139 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(378pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:27:11:139 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(634pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:38:20:235 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:38:21:063 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:38:21:612 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:38:23:260 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:38:23:653 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:38:25:279 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:39:12:011 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(496pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:39:12:012 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(505pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:40:36:513 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:40:37:050 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:40:43:665 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:40:44:894 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:40:45:215 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:40:46:920 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:41:12:437 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(365pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:41:12:437 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(633pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:42:18:504 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:42:19:851 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:43:09:834 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:43:10:679 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:43:12:667 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(408pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:43:12:667 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(849pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:44:12:319 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(57pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:44:12:319 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(146pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:44:56:010 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:44:57:448 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:45:12:925 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(406pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:45:12:925 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(594pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 10:50:13:937 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:50:14:984 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 10:51:12:523 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(508pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 10:51:12:523 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(664pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:15:05:611 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:15:06:001 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:15:12:268 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(465pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:15:12:269 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(589pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:16:12:890 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(58pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:16:12:890 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(71pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:18:19:922 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:18:20:126 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:19:12:782 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(382pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:19:12:782 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(379pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:21:19:859 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:21:19:992 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:22:12:607 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(445pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:22:12:608 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(752pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:24:56:109 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:24:57:948 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:25:12:495 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(283pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:25:12:496 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(717pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:33:52:247 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:33:53:531 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:34:12:963 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(328pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:34:12:964 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(697pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:36:29:282 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:36:31:042 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:37:12:790 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(476pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:37:12:790 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(575pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:39:05:359 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:39:06:653 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:39:12:036 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(329pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:39:12:036 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(917pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:40:12:704 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(63pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:40:12:704 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(108pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:40:35:544 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:40:35:851 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:41:12:465 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(539pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:41:12:465 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(484pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:42:15:314 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:42:16:544 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:42:33:659 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:42:34:795 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:43:12:694 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(510pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:43:12:694 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(815pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:48:03:751 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:48:04:652 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:48:05:767 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:48:06:241 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 11:48:12:718 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(302pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 11:48:12:718 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(698pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 11:49:12:350 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(124pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:16:02:734 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:16:03:552 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:16:12:702 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(336pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:16:12:702 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(664pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:19:39:152 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:19:39:568 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:19:40:527 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:19:41:502 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:19:46:112 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:19:47:581 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:20:12:184 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(366pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:20:12:184 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(817pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:25:46:575 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:25:47:493 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:25:48:389 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:25:49:274 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:26:13:999 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(491pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:26:14:000 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(737pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:57:06:759 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:57:08:670 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:57:13:967 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(515pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:57:13:968 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(808pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:57:18:949 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:57:20:791 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:58:13:591 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(123pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:58:13:592 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(193pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:58:49:535 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:58:50:017 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:59:13:188 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(537pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 12:59:13:188 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(769pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 12:59:15:127 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 12:59:16:114 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:00:13:937 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(337pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:00:13:938 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(661pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:04:07:833 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:04:09:115 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:04:13:406 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(493pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:04:13:407 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(649pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:05:14:011 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(85pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:05:14:011 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(102pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:08:04:409 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:08:05:508 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:08:06:136 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:08:07:540 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:08:14:926 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(435pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:08:14:926 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(565pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:09:14:521 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(54pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:09:21:269 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:09:22:457 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:10:14:323 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(496pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:10:14:323 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(828pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:14:44:502 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:14:45:597 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:14:46:251 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:14:47:615 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:15:14:316 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(485pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:15:14:316 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(605pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:16:55:083 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:16:57:105 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:17:14:546 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(434pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:17:14:547 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(566pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:19:51:954 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:19:52:918 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:20:14:467 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(288pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:20:14:467 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(712pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:21:49:360 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:21:50:036 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:22:14:694 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(443pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:22:14:695 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(557pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:30:22:890 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:30:23:703 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:31:14:152 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(247pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:31:14:153 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(797pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:31:58:950 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:32:00:403 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:32:14:820 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(359pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:32:14:820 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(641pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:33:47:481 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:33:47:831 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:34:14:039 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(292pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:34:14:039 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(718pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:41:43:103 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:41:44:322 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:42:14:013 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(254pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:42:14:014 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(744pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:48:38:246 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:48:38:797 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:49:15:393 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(411pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:49:15:394 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(587pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:52:40:945 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:52:41:651 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:53:15:845 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(415pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:53:15:845 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(585pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 13:54:53:939 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:54:54:833 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 13:55:15:055 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(478pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 13:55:15:055 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(522pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:00:16:238 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:00:18:008 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:01:15:831 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(329pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:01:15:831 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(679pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:03:55:163 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:03:56:421 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:03:56:972 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:03:58:274 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:04:15:855 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(508pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:04:15:856 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(617pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:15:10:933 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:15:11:501 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:15:15:444 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(429pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:15:15:444 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(571pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:16:15:041 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(54pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:16:15:041 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(121pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:22:31:193 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:22:31:773 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:23:15:297 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(325pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:23:15:297 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(675pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:26:21:934 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:26:22:491 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:27:15:769 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(458pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:27:15:769 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(542pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:28:57:660 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:28:59:620 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:29:15:034 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(373pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:29:15:035 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(648pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:39:30:442 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:39:31:990 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:40:15:754 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(451pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:40:15:754 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(648pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:44:18:231 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:44:18:933 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:45:15:778 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(528pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:45:15:779 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(705pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 14:58:20:942 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:58:21:726 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 14:59:15:396 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(394pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 14:59:15:397 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(606pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:00:52:949 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:00:53:465 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:01:15:625 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(590pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:01:15:625 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(410pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:04:33:012 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:04:33:729 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:05:15:077 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(411pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:05:15:078 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(590pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:05:35:149 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:05:35:874 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:06:15:779 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(612pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:06:15:779 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(404pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:09:11:108 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:09:12:282 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:09:13:003 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:09:14:269 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:09:15:767 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(339pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:09:15:767 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(659pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:10:15:357 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(68pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:10:15:357 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(115pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:20:22:985 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:20:23:639 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:21:16:020 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(408pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:21:16:020 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(592pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:22:11:763 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:22:12:574 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:22:16:624 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(385pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:22:16:625 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(616pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:23:16:215 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(63pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:23:16:216 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(105pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:29:06:549 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:29:08:579 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:29:16:900 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(336pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:29:16:901 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(739pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:30:16:496 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(54pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:35:56:748 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:35:58:794 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:36:16:206 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(191pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:36:16:206 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(494pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:43:27:984 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:43:29:306 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:44:16:182 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(291pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:44:16:183 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(710pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:47:47:386 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:47:47:918 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:48:16:653 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(358pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:48:16:653 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(653pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 15:49:20:932 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:49:22:935 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 15:50:16:856 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(337pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 15:50:16:857 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(663pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:02:03:174 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:02:04:846 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:02:16:201 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(202pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:02:16:201 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(284pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:07:20:196 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:07:22:159 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:08:16:954 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(453pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:08:16:954 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(546pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:13:55:701 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:13:56:290 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:14:16:556 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(308pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:14:16:556 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(693pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:26:48:497 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:26:50:067 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:27:16:578 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(606pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:27:16:578 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(394pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:28:28:107 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:28:29:244 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:28:29:967 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:28:31:228 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:29:16:932 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(301pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:29:16:933 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(749pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:36:50:841 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:36:52:370 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:37:16:854 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(322pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:37:16:854 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(678pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:41:18:397 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:41:19:410 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:42:16:910 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(608pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:42:16:911 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(831pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:44:17:244 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:44:18:905 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:44:53:246 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:44:53:648 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:45:16:752 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(472pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:45:16:752 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(783pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:48:16:550 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(80pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:48:17:018 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:17:353 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:18:666 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:19:361 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:28:340 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:29:512 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:30:226 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:48:31:529 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:49:16:401 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(491pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:49:16:401 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(862pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:51:12:439 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:51:13:230 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:51:13:871 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:51:15:224 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:51:16:733 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(436pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:51:16:734 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(626pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:52:05:648 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=AUTHEN-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:52:05:649 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=AUTHEN-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:52:05:649 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=AUTHOR-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:52:05:650 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=AUTHOR-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:52:05:652 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=ACCOUNT-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:52:05:652 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=ACCOUNT-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:52:05:655 2019 CNXM-COSW-1F10 SHELL/5/SHELL_LOGIN: gj logged in from 172.16.158.241.
+%Oct 10 16:52:05:677 2019 CNXM-COSW-1F10 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is super
+%Oct 10 16:52:08:730 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is screen-length dis
+%Oct 10 16:52:11:789 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display clock
+%Oct 10 16:52:14:847 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display interface brief
+%Oct 10 16:52:16:328 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(78pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:52:16:329 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(94pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:52:17:809 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display cur
+%Oct 10 16:52:19:370 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:52:20:211 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:52:21:208 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display log
+%Oct 10 16:52:24:245 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display stp
+%Oct 10 16:52:27:093 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display stp brief
+%Oct 10 16:52:30:088 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display cpu-usage
+%Oct 10 16:52:33:083 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display memory
+%Oct 10 16:52:36:125 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display environment
+%Oct 10 16:52:38:678 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:52:39:399 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display fan
+%Oct 10 16:52:40:203 2019 CNXM-COSW-1F10 MSTP/6/MSTP_NOTIFIED_TC: Instance 0's port GigabitEthernet1/0/22 was notified of a topology change.
+%Oct 10 16:52:42:113 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display power
+%Oct 10 16:52:45:191 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display ip routing-table
+%Oct 10 16:52:48:129 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is dis version
+%Oct 10 16:52:51:057 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is quit
+%Oct 10 16:52:51:058 2019 CNXM-COSW-1F10 SHELL/5/SHELL_LOGOUT: gj logged out from 172.16.158.241.
+%Oct 10 16:53:16:984 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(487pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/1 in the last 60 seconds.
+%Oct 10 16:53:16:985 2019 CNXM-COSW-1F10 ARP/4/RATELIMIT: The ARP packet rate(671pps) exceeded the rate limit(50pps) on interface Ten-GigabitEthernet1/1/2 in the last 60 seconds.
+%Oct 10 16:54:26:131 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=AUTHEN-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:54:26:132 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=AUTHEN-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:54:26:132 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=AUTHOR-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:54:26:133 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=AUTHOR-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:54:26:134 2019 CNXM-COSW-1F10 SC/6/SC_AAA_LAUNCH: -AAAType=ACCOUNT-AAAScheme= local-Service=login-UserName=gj@system; AAA launched.
+%Oct 10 16:54:26:135 2019 CNXM-COSW-1F10 SC/6/SC_AAA_SUCCESS: -AAAType=ACCOUNT-AAAScheme= local-Service=login-UserName=gj@system; AAA is successful.
+%Oct 10 16:54:26:138 2019 CNXM-COSW-1F10 SHELL/5/SHELL_LOGIN: gj logged in from 172.16.158.241.
+%Oct 10 16:54:26:158 2019 CNXM-COSW-1F10 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is super
+%Oct 10 16:54:29:214 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is screen-length dis
+%Oct 10 16:54:32:258 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display clock
+%Oct 10 16:54:35:330 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display interface brief
+%Oct 10 16:54:38:292 2019 CNXM-COSW-1F10 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=gj; Command is display cur
+<CNXM-COSW-1F10>display stp
+-------[CIST Global Info][Mode MSTP]-------
+CIST Bridge         :32768.5cdd-7066-7526
+Bridge Times        :Hello 2s MaxAge 20s FwDly 15s MaxHop 20
+CIST Root/ERPC      :32768.5cdd-7017-3392 / 100
+CIST RegRoot/IRPC   :32768.5cdd-7066-7526 / 0
+CIST RootPortId     :128.22
+BPDU-Protection     :disabled
+Bridge Config-
+Digest-Snooping     :disabled
+TC or TCN received  :566865
+Time since last TC  :0 days 0h:2m:4s
+
+----[Port505(Bridge-Aggregation1)][DISABLED]----
+ Port Protocol       :disabled
+
+----[Port1(GigabitEthernet1/0/1)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.1
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :5115918
+          TCN: 0, Config: 0, RST: 0, MST: 5115918
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port2(GigabitEthernet1/0/2)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=20
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.2
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :475261
+          TCN: 0, Config: 0, RST: 0, MST: 475261
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port3(GigabitEthernet1/0/3)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=20
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.3
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :13759719
+          TCN: 0, Config: 0, RST: 0, MST: 13759719
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port4(GigabitEthernet1/0/4)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.4
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :3530074
+          TCN: 0, Config: 0, RST: 0, MST: 3530074
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port5(GigabitEthernet1/0/5)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.5
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :11005600
+          TCN: 0, Config: 0, RST: 0, MST: 11005600
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port6(GigabitEthernet1/0/6)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.6
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port7(GigabitEthernet1/0/7)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.7
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port8(GigabitEthernet1/0/8)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.8
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :45
+          TCN: 0, Config: 0, RST: 0, MST: 45
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port9(GigabitEthernet1/0/9)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.9
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port10(GigabitEthernet1/0/10)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.10
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port11(GigabitEthernet1/0/11)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.11
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port12(GigabitEthernet1/0/12)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.12
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port13(GigabitEthernet1/0/13)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.13
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port14(GigabitEthernet1/0/14)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.14
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port15(GigabitEthernet1/0/15)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.15
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port16(GigabitEthernet1/0/16)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.16
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port17(GigabitEthernet1/0/17)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.17
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port18(GigabitEthernet1/0/18)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.18
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port19(GigabitEthernet1/0/19)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.19
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port20(GigabitEthernet1/0/20)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.20
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port21(GigabitEthernet1/0/21)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.21
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port22(GigabitEthernet1/0/22)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Root Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=20
+ Desg. Bridge/Port   :32768.5cdd-7066-7a26 / 128.18
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :3
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 4s RemHop 20
+ BPDU Sent           :64
+          TCN: 0, Config: 0, RST: 0, MST: 64
+ BPDU Received       :41787151
+          TCN: 0, Config: 0, RST: 0, MST: 41787151
+
+----[Port23(GigabitEthernet1/0/23)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=20
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.23
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :7
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :48428968
+          TCN: 0, Config: 0, RST: 0, MST: 48428968
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port24(GigabitEthernet1/0/24)][FORWARDING]----
+ Port Protocol       :enabled
+ Port Role           :CIST Designated Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=20
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.24
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=true
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Rapid transition    :false
+ Num of Vlans Mapped :8
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 5s RemHop 20
+ BPDU Sent           :48428968
+          TCN: 0, Config: 0, RST: 0, MST: 48428968
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port25(GigabitEthernet1/0/25)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.25
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port26(GigabitEthernet1/0/26)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.26
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port27(GigabitEthernet1/0/27)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.27
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port28(GigabitEthernet1/0/28)][DOWN]----
+ Port Protocol       :enabled
+ Port Role           :CIST Disabled Port
+ Port Priority       :128
+ Port Cost(Legacy)   :Config=auto / Active=200000
+ Desg. Bridge/Port   :32768.5cdd-7066-7526 / 128.28
+ Port Edged          :Config=disabled / Active=disabled
+ Point-to-point      :Config=auto / Active=false
+ Transmit Limit      :10 packets/hello-time
+ Protection Type     :None
+ MST BPDU Format     :Config=auto / Active=legacy
+ Port Config-
+ Digest-Snooping     :disabled
+ Num of Vlans Mapped :1
+ PortTimes           :Hello 2s MaxAge 20s FwDly 15s MsgAge 0s RemHop 20
+ BPDU Sent           :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+ BPDU Received       :0
+          TCN: 0, Config: 0, RST: 0, MST: 0
+
+----[Port29(Ten-GigabitEthernet1/1/1)][DOWN]----
+ Port Protocol       :disabled
+
+----[Port30(Ten-GigabitEthernet1/1/2)][DOWN]----
+ Port Protocol       :disabled
+<CNXM-COSW-1F10>display stp brief
+ MSTID      Port                         Role  STP State     Protection
+   0        GigabitEthernet1/0/1         DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/2         DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/3         DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/4         DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/5         DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/22        ROOT  FORWARDING    NONE
+   0        GigabitEthernet1/0/23        DESI  FORWARDING    NONE
+   0        GigabitEthernet1/0/24        DESI  FORWARDING    NONE
+<CNXM-COSW-1F10>display cpu-usage
+Slot 1 CPU usage:
+      11% in last 5 seconds
+       8% in last 1 minute
+       9% in last 5 minutes
+
+<CNXM-COSW-1F10>display memory
+System Total Memory(bytes): 159508800
+Total Used Memory(bytes): 69715440
+Used Rate: 43%
+<CNXM-COSW-1F10>display environment
+ Slot 1
+System temperature information (degree centigrade):
+-------------------------------------------------------------------------------
+Sensor     Temperature  LowerLimit  WarningLimit  AlarmLimit ShutdownLimit
+hotspot 1  37           -5          55            NA          NA
+<CNXM-COSW-1F10>display fan
+ Slot 1
+      FAN    1
+      State    : Normal
+
+<CNXM-COSW-1F10>display power
+ Slot 1
+      Power    1
+      State    : Normal
+      Type     : AC
+
+<CNXM-COSW-1F10>display ip routing-table
+Routing Tables: Public
+	Destinations : 5	Routes : 5
+
+Destination/Mask    Proto  Pre  Cost         NextHop         Interface
+
+0.0.0.0/0           Static 60   0            192.168.10.254  Vlan1000
+127.0.0.0/8         Direct 0    0            127.0.0.1       InLoop0
+127.0.0.1/32        Direct 0    0            127.0.0.1       InLoop0
+192.168.10.0/24     Direct 0    0            192.168.10.10   Vlan1000
+192.168.10.10/32    Direct 0    0            127.0.0.1       InLoop0
+
+<CNXM-COSW-1F10>dis  version
+H3C Comware Platform Software
+Comware Software, Version 5.20, Release 2220P02
+Copyright (c) 2004-2013 Hangzhou H3C Tech. Co., Ltd. All rights reserved.
+H3C S5500-28C-EI uptime is 160 weeks, 4 days, 17 hours, 55 minutes
+
+H3C S5500-28C-EI with 1 Processor
+256M    bytes SDRAM
+32768K  bytes Flash Memory
+
+Hardware Version is REV.C
+CPLD Version is 002
+Bootrom Version is 715
+[SubSlot 0] 24GE+4SFP Hardware Version is REV.C
+[SubSlot 1] 2 SFP+ Hardware Version is REV.A
+
+<CNXM-COSW-1F10>quit

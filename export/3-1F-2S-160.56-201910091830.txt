@@ -1,0 +1,25 @@
+display cur
+#
+ version 5.20, Release 2220P02
+#
+ sysname 3-1F-2S-160.56
+#
+ super password level 3 cipher $c$3$8clplqAEKyYnZxxcYyOHNVRRwT1E6OPiZPn/
+#
+ domain default enable system
+#
+ telnet server enable
+#
+ undo ip http enable
+#
+ password-recovery enable
+#
+vlan 1
+#
+vlan 151 to 152
+#
+domain system
+ access-limit disable
+ state active
+ idle-cut disable
+  ---- More ----

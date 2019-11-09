@@ -1,0 +1,1067 @@
+screen-length dis
+% Screen-length configuration is disabled for current user.
+<3-1F-2S-160.56>display clock
+11:11:22 UTC Wed 10/09/2019
+<3-1F-2S-160.56>display cur
+#
+ version 5.20, Release 2220P02
+#
+ sysname 3-1F-2S-160.56
+#
+ super password level 3 cipher $c$3$8clplqAEKyYnZxxcYyOHNVRRwT1E6OPiZPn/
+#
+ domain default enable system
+#
+ telnet server enable
+#
+ undo ip http enable
+#
+ password-recovery enable
+#
+vlan 1
+#
+vlan 151 to 152
+#
+domain system
+ access-limit disable
+ state active
+ idle-cut disable
+ self-service-url disable
+#
+user-group system
+ group-attribute allow-guest
+#
+interface NULL0
+#
+interface Vlan-interface1
+ description manager
+ ip address 192.168.160.56 255.255.255.0
+#
+interface GigabitEthernet1/0/1
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/2
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/3
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/4
+ description N003
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/5
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/6
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/7
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/8
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/9
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/10
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/11
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/12
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/13
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/14
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/15
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/16
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/17
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/18
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/19
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/20
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/21
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/22
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/23
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/24
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/25
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/26
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/27
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/28
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/29
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/30
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/31
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/32
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/33
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/34
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/35
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/36
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/37
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/38
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/39
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/40
+ port access vlan 152
+ speed 100
+ duplex full
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/41
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/42
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/43
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/44
+ port access vlan 152
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/45
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/46
+ port access vlan 151
+ loopback-detection enable
+ broadcast-suppression 5
+ stp edged-port enable
+ port-security max-mac-count 1
+#
+interface GigabitEthernet1/0/47
+ description From_1F2S-160.11_F47
+ port link-type trunk
+ port trunk permit vlan all
+#
+interface GigabitEthernet1/0/48
+ port link-type trunk
+ port trunk permit vlan all
+#
+interface GigabitEthernet1/0/49
+ shutdown
+#
+interface GigabitEthernet1/0/50
+ shutdown
+#
+interface GigabitEthernet1/0/51
+ shutdown
+#
+interface GigabitEthernet1/0/52
+ shutdown
+#
+ ip route-static 0.0.0.0 0.0.0.0 192.168.160.254
+#
+ snmp-agent
+ snmp-agent local-engineid 800063A2035CDD7017199A
+ snmp-agent community read xmcisco
+ snmp-agent sys-info version v2c v3
+ snmp-agent mib-view included internet internet
+#
+ ntp-service unicast-server 192.168.160.1 source-interface Vlan-interface1
+#
+ load xml-configuration
+#
+user-interface aux 0
+user-interface vty 0 4
+ set authentication password cipher $c$3$LFCHymfwUIzb5Zjnv2CElN3bsamHuaxgpWzh
+user-interface vty 5 15
+#
+return
+<3-1F-2S-160.56>display stp
+ Protocol Status    :disabled
+ Protocol Std.      :IEEE 802.1s
+ Version            :3
+ Bridge-Prio.       :32768
+ MAC address        :5cdd-7017-1992
+ Max age(s)         :20
+ Forward delay(s)   :15
+ Hello time(s)      :2
+ Max hops           :20
+ TC Snooping        :disabled
+<3-1F-2S-160.56>display stp brief
+ Protocol Status    :disabled
+ Protocol Std.      :IEEE 802.1s
+ Version            :3
+ Bridge-Prio.       :32768
+ MAC address        :5cdd-7017-1992
+ Max age(s)         :20
+ Forward delay(s)   :15
+ Hello time(s)      :2
+ Max hops           :20
+ TC Snooping        :disabled
+<3-1F-2S-160.56>display cpu-usage
+Slot 1 CPU usage:
+      19% in last 5 seconds
+      11% in last 1 minute
+      11% in last 5 minutes
+
+<3-1F-2S-160.56>display memory
+System Total Memory(bytes): 68679520
+Total Used Memory(bytes): 52126404
+Used Rate: 75%
+<3-1F-2S-160.56>display  environment
+ Slot 1
+System temperature information (degree centigrade):
+-------------------------------------------------------------------------------
+Sensor     Temperature  LowerLimit  WarningLimit  AlarmLimit ShutdownLimit
+hotspot 1  32           -5          55            NA          NA
+<3-1F-2S-160.56>display fan
+ Slot 1
+      FAN    1
+      State    : Normal
+
+<3-1F-2S-160.56>display power
+ Slot 1
+      Power    1
+      State    : Normal
+      Type     : AC
+
+<3-1F-2S-160.56>display ip routing-table
+Routing Tables: Public
+	Destinations : 5	Routes : 5
+
+Destination/Mask    Proto  Pre  Cost         NextHop         Interface
+
+0.0.0.0/0           Static 60   0            192.168.160.254 Vlan1
+127.0.0.0/8         Direct 0    0            127.0.0.1       InLoop0
+127.0.0.1/32        Direct 0    0            127.0.0.1       InLoop0
+192.168.160.0/24    Direct 0    0            192.168.160.56  Vlan1
+192.168.160.56/32   Direct 0    0            127.0.0.1       InLoop0
+
+<3-1F-2S-160.56>display interface brief
+The brief information of interface(s) under route mode:
+Link: ADM - administratively down; Stby - standby
+Protocol: (s) - spoofing
+Interface            Link Protocol Main IP         Description
+NULL0                UP   UP(s)    --
+Vlan1                UP   UP       192.168.160.56  manager
+
+The brief information of interface(s) under bridge mode:
+Link: ADM - administratively down; Stby - standby
+Speed or Duplex: (a)/A - auto; H - half; F - full
+Type: A - access; T - trunk; H - hybrid
+Interface            Link Speed   Duplex Type PVID Description
+GE1/0/1              DOWN auto    A      A    152
+GE1/0/2              UP   100M(a) H(a)   A    152
+GE1/0/3              UP   1G(a)   F(a)   A    152
+GE1/0/4              DOWN auto    A      A    151  N003
+GE1/0/5              UP   100M(a) F(a)   A    152
+GE1/0/6              UP   1G(a)   F(a)   A    152
+GE1/0/7              DOWN auto    A      A    152
+GE1/0/8              UP   1G(a)   F(a)   A    152
+GE1/0/9              UP   100M(a) F(a)   A    152
+GE1/0/10             UP   1G(a)   F(a)   A    152
+GE1/0/11             UP   1G(a)   F(a)   A    152
+GE1/0/12             UP   1G(a)   F(a)   A    152
+GE1/0/13             UP   100M(a) F(a)   A    152
+GE1/0/14             UP   100M(a) H(a)   A    152
+GE1/0/15             DOWN auto    A      A    152
+GE1/0/16             DOWN auto    A      A    152
+GE1/0/17             UP   100M(a) F(a)   A    151
+GE1/0/18             DOWN auto    A      A    152
+GE1/0/19             DOWN auto    A      A    152
+GE1/0/20             DOWN auto    A      A    152
+GE1/0/21             UP   100M(a) F(a)   A    152
+GE1/0/22             UP   1G(a)   F(a)   A    152
+GE1/0/23             UP   10M(a)  F(a)   A    152
+GE1/0/24             UP   100M(a) H(a)   A    152
+GE1/0/25             DOWN auto    A      A    151
+GE1/0/26             UP   1G(a)   F(a)   A    152
+GE1/0/27             DOWN auto    A      A    152
+GE1/0/28             DOWN auto    A      A    152
+GE1/0/29             DOWN auto    A      A    152
+GE1/0/30             UP   100M(a) F(a)   A    152
+GE1/0/31             DOWN auto    A      A    152
+GE1/0/32             DOWN auto    A      A    152
+GE1/0/33             DOWN auto    A      A    152
+GE1/0/34             DOWN auto    A      A    152
+GE1/0/35             UP   100M(a) F(a)   A    151
+GE1/0/36             DOWN auto    A      A    152
+GE1/0/37             DOWN auto    A      A    152
+GE1/0/38             DOWN auto    A      A    152
+GE1/0/39             DOWN auto    A      A    152
+GE1/0/40             DOWN 100M    F      A    152
+GE1/0/41             DOWN auto    A      A    152
+GE1/0/42             DOWN auto    A      A    152
+GE1/0/43             UP   1G(a)   F(a)   A    152
+GE1/0/44             DOWN auto    A      A    152
+GE1/0/45             DOWN auto    A      A    151
+GE1/0/46             UP   100M(a) F(a)   A    151
+GE1/0/47             UP   100M(a) F(a)   T    1    From_1F2S-160.11_F47
+GE1/0/48             DOWN auto    A      T    1
+GE1/0/49             ADM  auto    A      A    1
+GE1/0/50             ADM  auto    A      A    1
+GE1/0/51             ADM  auto    A      A    1
+GE1/0/52             ADM  auto    A      A    1
+
+<3-1F-2S-160.56>dis  version
+H3C Comware Platform Software
+Comware Software, Version 5.20, Release 2220P02
+Copyright (c) 2004-2013 Hangzhou H3C Tech. Co., Ltd. All rights reserved.
+H3C S5120-48P-EI uptime is 159 weeks, 4 days, 8 hours, 42 minutes
+
+H3C S5120-48P-EI with 1 Processor
+128M    bytes SDRAM
+16384K  bytes Flash Memory
+
+Hardware Version is REV.C
+CPLD Version is 007
+Bootrom Version is 618
+[SubSlot 0] 48GE+4SFP Hardware Version is REV.C
+
+<3-1F-2S-160.56>display log
+Logging buffer configuration and contents:enabled
+Allowed max buffer size : 1024
+Actual buffer size : 512
+Channel number : 4 , Channel name : logbuffer
+Dropped messages : 0
+Overwritten messages : 106652
+Current messages : 512
+
+%Oct  8 03:39:48:505 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:39:49:375 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:40:16:556 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:40:20:524 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:44:20:928 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 03:44:21:229 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 03:44:23:635 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 03:47:03:783 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 03:47:15:067 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 03:47:15:705 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 03:47:52:453 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 03:52:52:662 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(128pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 03:56:32:059 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:56:45:262 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:56:48:545 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:56:49:675 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:57:53:200 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:57:54:067 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:57:57:605 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:57:57:955 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 03:58:05:363 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 03:58:05:969 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:02:53:880 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:02:54:737 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:03:36:759 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:03:39:983 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:03:43:261 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:03:43:887 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:04:03:612 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:04:35:759 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:09:52:978 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(119pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 04:14:27:548 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 04:14:28:050 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 04:14:30:796 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 04:17:59:403 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:18:00:018 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:18:57:757 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:18:58:104 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:24:47:353 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:24:47:969 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 04:39:52:044 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 04:39:54:432 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 04:39:54:782 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 04:40:16:436 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 04:40:16:668 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 04:45:22:234 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 04:45:23:352 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 05:17:52:977 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(103pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:21:52:216 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(123pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:29:52:283 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:30:52:285 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(127pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:31:52:423 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(91pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:32:52:423 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 05:43:49:566 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 05:43:50:180 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 05:48:17:998 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 05:48:19:966 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 05:53:53:233 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is DOWN.
+%Oct  8 05:53:55:888 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is UP.
+%Oct  8 05:54:50:624 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 05:54:51:068 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 05:54:53:826 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 05:57:24:470 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 05:57:26:602 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 05:57:26:950 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 05:57:48:586 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 05:57:49:062 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 06:04:19:692 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 06:04:20:816 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 06:10:52:653 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(114pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 06:11:52:700 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(123pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 06:15:52:700 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(103pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 06:37:04:142 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is DOWN.
+%Oct  8 06:37:06:804 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is UP.
+%Oct  8 06:37:30:995 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 06:37:31:346 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 06:37:52:755 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(111pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 06:40:52:794 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(146pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 06:54:44:071 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 06:54:44:942 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 06:56:19:574 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 06:56:19:927 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 07:13:52:950 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(103pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 07:22:52:479 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(92pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 07:23:52:485 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(107pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 07:34:59:272 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 07:34:59:896 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 07:58:52:244 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(136pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 07:59:52:244 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(71pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:04:52:443 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(113pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:07:13:758 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 08:07:14:114 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 08:08:52:542 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(136pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:09:52:543 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(104pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:13:17:379 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 08:13:18:369 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 08:27:52:041 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(113pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:28:06:528 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 08:28:07:163 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 08:33:52:250 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(93pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 08:48:33:976 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 08:48:34:312 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 09:04:45:016 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 09:04:45:373 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 09:09:16:087 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 09:09:17:037 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 09:09:19:181 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 09:09:52:216 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(120pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 09:24:52:682 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(108pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 09:30:10:230 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 09:30:10:771 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 09:30:13:282 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 09:31:52:981 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(124pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 09:34:33:997 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 09:34:37:011 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 09:34:37:408 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 09:41:03:201 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 09:41:05:345 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 09:41:05:681 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 09:41:27:474 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  8 09:41:27:660 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 09:53:57:176 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 09:53:57:519 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 09:53:59:650 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 09:58:03:614 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 09:58:14:975 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 09:58:15:481 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 10:02:19:946 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 10:02:21:341 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 10:05:40:283 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 10:05:40:647 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 10:06:50:457 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 10:06:50:809 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 10:15:52:888 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(101pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 10:18:50:729 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 10:18:51:095 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 10:18:53:235 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 10:22:53:927 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(86pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 10:23:53:923 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(127pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 10:24:53:920 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(97pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 10:39:11:377 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/24 link status is DOWN.
+%Oct  8 10:39:22:605 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/24 link status is UP.
+%Oct  8 10:54:53:703 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(127pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:01:54:062 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  8 11:14:45:137 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 11:14:46:112 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 11:14:48:114 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 11:15:25:637 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 11:15:37:294 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 11:15:37:783 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 11:16:53:889 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(87pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:17:53:889 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:20:53:019 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:21:53:209 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(108pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:22:53:207 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(89pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 11:23:28:902 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 11:23:31:945 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 11:23:32:402 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 11:23:53:207 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(79pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 12:00:18:418 2019 3-1F-2S-160.56 LLDP/5/LLDP_NEIGHBOR_AGE_OUT: Neighbor aged out on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  8 12:08:56:139 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 12:08:56:342 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 12:08:58:724 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 12:11:28:156 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 12:11:28:517 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 12:20:01:880 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 12:20:02:898 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 12:20:04:902 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 12:46:53:850 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(87pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 12:47:53:889 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(86pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 12:48:53:888 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 12:49:53:888 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(88pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:05:30:892 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 13:05:42:739 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 13:05:43:250 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 13:19:53:431 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(121pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:20:53:429 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(87pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:22:53:600 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(66pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:23:14:441 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 13:23:17:253 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 13:23:17:756 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 13:23:53:598 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(107pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:24:53:667 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(88pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:25:59:436 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 13:25:59:727 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 13:26:02:092 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 13:42:53:774 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(108pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 13:57:09:240 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 13:57:10:257 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 13:57:12:276 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 14:01:53:990 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(125pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 14:41:04:681 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 14:41:05:545 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 15:13:53:973 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 15:17:01:950 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 15:17:02:561 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 15:24:53:472 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(120pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 15:52:53:338 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(109pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 15:54:53:348 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(93pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 15:55:53:529 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(98pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 16:12:53:785 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(120pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 16:13:53:784 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(67pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 16:14:53:784 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(119pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 16:57:26:240 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 16:57:37:639 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 16:57:38:561 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 17:17:55:898 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 17:17:56:127 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 17:17:58:523 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 17:37:53:931 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(99pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 17:38:53:930 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(130pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 18:14:53:136 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(128pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 18:15:53:136 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(124pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 18:39:53:683 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(94pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 18:40:53:683 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(87pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 18:41:53:764 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(107pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:03:53:127 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(117pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:38:25:638 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 20:38:25:988 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 20:41:53:603 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(86pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:42:53:603 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(66pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:50:53:871 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(89pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:52:54:001 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(66pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 20:53:54:007 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(103pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 21:05:53:260 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(76pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 21:06:53:309 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 21:07:53:359 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(120pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 22:08:17:069 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 22:08:28:435 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 22:08:28:805 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 22:25:53:739 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(92pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 22:26:53:860 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 22:28:47:393 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 22:28:47:785 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 22:28:49:911 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 23:07:53:913 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:08:53:913 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(121pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:20:47:883 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 23:20:48:240 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 23:29:53:269 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:31:53:279 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(89pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:49:31:009 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  8 23:49:42:383 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  8 23:49:42:429 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  8 23:53:06:930 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 23:53:09:848 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 23:53:17:502 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 23:53:19:173 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 23:53:46:934 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  8 23:53:48:318 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  8 23:54:10:987 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  8 23:54:13:770 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  8 23:54:14:338 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  8 23:54:53:206 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(91pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:55:53:249 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(100pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:56:53:247 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(91pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  8 23:57:53:289 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(71pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:00:53:434 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(101pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:03:53:497 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(105pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:04:53:508 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(109pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:05:53:507 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(113pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:08:53:727 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(166pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:09:53:726 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(130pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:21:03:217 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 00:21:03:404 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 00:21:05:787 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 00:23:24:707 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 00:23:25:232 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 00:25:00:536 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 00:25:12:252 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 00:25:12:649 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 00:25:53:993 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(131pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:27:53:112 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(200pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:28:53:190 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(136pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:36:06:651 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 00:36:07:790 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 00:49:06:767 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 00:49:07:124 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 00:55:53:995 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(90pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:56:53:995 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 00:57:05:193 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 00:57:05:537 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 01:07:53:422 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(123pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 01:08:52:154 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 01:08:53:545 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 01:19:00:677 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 01:19:01:032 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 01:37:53:046 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(169pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 01:38:53:046 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(133pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 01:50:53:213 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(112pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 01:51:53:212 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(135pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 02:00:53:240 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(116pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 02:04:53:509 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(91pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 02:05:53:509 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(93pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 02:14:35:882 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 02:14:36:239 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 02:22:03:804 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 02:22:04:158 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 02:23:13:591 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 02:23:14:108 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  9 02:45:16:555 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 02:45:16:962 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 02:55:18:472 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 02:55:18:815 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 02:57:40:160 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 02:57:40:970 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 02:57:43:240 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 03:06:50:164 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 03:06:51:286 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 03:14:40:450 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 03:14:41:007 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  9 03:18:24:967 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 03:18:25:408 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 03:20:34:239 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 03:20:37:018 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 03:20:37:422 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 03:48:53:606 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(135pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 03:49:01:847 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 03:49:02:175 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 03:49:04:332 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 03:49:53:685 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(106pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 03:58:27:799 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 03:58:28:670 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 03:58:48:899 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 03:58:51:313 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 04:04:53:300 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(158pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 04:05:23:941 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 04:05:35:571 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 04:05:35:611 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 04:05:48:814 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 04:05:49:163 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 04:10:56:672 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 04:10:57:032 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 05:17:53:546 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(159pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:18:53:546 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(137pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:19:53:555 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(169pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:22:53:726 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(137pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:23:53:724 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(68pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:55:41:630 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 05:55:41:977 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 05:58:53:648 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(69pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 05:59:52:096 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 05:59:52:447 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 05:59:53:647 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(119pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 06:16:21:562 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 06:16:23:730 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 06:19:31:533 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 06:19:33:944 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 06:29:53:073 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(135pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 06:39:03:253 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 06:39:04:221 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 06:39:06:236 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 06:39:15:643 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 06:39:16:760 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 07:03:47:173 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 07:03:48:043 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 07:06:33:984 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 07:06:37:013 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 07:06:37:368 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 07:37:31:680 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 07:37:32:490 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 07:37:34:505 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 07:51:59:354 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 07:52:02:386 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 07:52:02:712 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 07:59:11:354 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 07:59:11:963 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 08:00:52:020 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is DOWN.
+%Oct  9 08:00:54:943 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is UP.
+%Oct  9 08:01:53:931 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(91pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:01:55:209 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 08:01:55:461 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 08:01:57:630 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 08:02:53:930 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(114pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:03:53:012 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(129pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:05:03:701 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is DOWN.
+%Oct  9 08:05:06:351 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/3 link status is UP.
+%Oct  9 08:07:53:230 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(114pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:10:51:084 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 08:11:02:488 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 08:11:03:090 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 08:13:53:500 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(123pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:14:06:292 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 08:14:07:436 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 08:14:53:500 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(114pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:24:53:695 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(64pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:25:53:705 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(132pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:26:53:705 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(130pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:27:53:705 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(69pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 08:29:11:393 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 08:29:12:266 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 08:29:15:548 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 08:29:16:932 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 08:36:25:437 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 08:36:26:309 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 08:47:57:990 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 08:47:58:426 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  9 08:48:01:504 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 08:53:58:510 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 08:54:01:470 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 08:54:06:070 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 08:54:27:016 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  9 08:54:29:397 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 08:54:29:747 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is DOWN.
+%Oct  9 08:54:38:897 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 08:54:47:812 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 08:54:51:386 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/30 link status is UP.
+%Oct  9 08:54:51:616 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/30 (IfIndex 9437213), Chassis ID is d481-d7dd-5e17, Port ID is d481-d7dd-5e17.
+%Oct  9 08:55:09:206 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis log
+%Oct  9 09:05:09:878 2019 3-1F-2S-160.56 CFGMAN/5/CFGMAN_EXIT: Exit from configuration mode.
+%Oct  9 09:05:09:878 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 09:05:53:771 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(136pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 09:17:28:910 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 09:17:29:735 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 09:17:32:021 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 09:19:48:205 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/22 link status is DOWN.
+%Oct  9 09:20:24:606 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/22 link status is UP.
+%Oct  9 09:20:25:118 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/22 (IfIndex 9437205), Chassis ID is 4487-fc6a-7d20, Port ID is 4487-fc6a-7d20.
+%Oct  9 09:26:13:839 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 09:26:16:610 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 09:26:17:078 2019 3-1F-2S-160.56 LLDP/6/LLDP_CREATE_NEIGHBOR: New neighbor created on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 09:43:38:112 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 09:43:39:231 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 09:44:53:715 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(105pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 09:52:53:115 2019 3-1F-2S-160.56 ARP/4/RATELIMIT: The ARP packet rate(104pps) exceeded the rate limit(50pps) on interface GigabitEthernet1/0/47 in the last 60 seconds.
+%Oct  9 10:05:13:153 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 10:05:13:515 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 10:08:25:917 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 10:08:29:951 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 10:08:36:305 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 10:08:41:574 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:08:44:248 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:09:23:335 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis cpu-usage
+%Oct  9 10:09:32:356 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis memory
+%Oct  9 10:09:52:347 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis power
+%Oct  9 10:10:22:947 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:10:32:240 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is quit
+%Oct  9 10:10:32:240 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:10:35:630 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGINFAIL:  TELNET user failed to log in from 172.16.158.241 on VTY0.
+%Oct  9 10:10:40:810 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:10:43:014 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:18:20:100 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:18:20:121 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt1-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:18:20:329 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:20:56:617 2019 3-1F-2S-160.56 CFGMAN/5/CFGMAN_EXIT: Exit from configuration mode.
+%Oct  9 10:20:56:618 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:21:19:534 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:21:19:582 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:21:19:790 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:25:55:699 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:25:55:719 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:25:55:927 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:27:30:989 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:27:31:015 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:27:34:241 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:31:12:578 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:31:12:598 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:31:12:712 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display cur
+%Oct  9 10:31:15:895 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 10:32:13:724 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 10:32:15:768 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 10:32:51:150 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is sys
+%Oct  9 10:34:22:525 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is quit
+%Oct  9 10:37:49:924 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is sys
+%Oct  9 10:39:54:649 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is quit
+%Oct  9 10:42:08:846 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/23 (IfIndex 9437206), Chassis ID is 7427-ea1f-aedb, Port ID is 7427-ea1f-aedb.
+%Oct  9 10:42:09:208 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is DOWN.
+%Oct  9 10:42:11:375 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/23 link status is UP.
+%Oct  9 10:44:59:544 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is screen-length dis
+%Oct  9 10:45:02:534 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis cu
+%Oct  9 10:47:45:282 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis clock
+%Oct  9 10:47:57:923 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is sys
+%Oct  9 10:48:14:918 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is quit
+%Oct  9 10:51:22:769 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is UP.
+%Oct  9 10:51:24:150 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/41 link status is DOWN.
+%Oct  9 10:58:17:728 2019 3-1F-2S-160.56 CFGMAN/5/CFGMAN_EXIT: Exit from configuration mode.
+%Oct  9 10:58:17:729 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 11:01:54:090 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 11:01:54:109 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 11:01:54:166 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is screen-length dis
+%Oct  9 11:01:57:198 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display clock
+%Oct  9 11:02:00:230 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display cur
+%Oct  9 11:02:03:245 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display stp
+%Oct  9 11:02:06:272 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display stp brief
+%Oct  9 11:02:09:248 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display cpu-usage
+%Oct  9 11:02:12:255 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display memory
+%Oct  9 11:02:15:256 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display environment
+%Oct  9 11:02:18:259 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display fan
+%Oct  9 11:02:21:400 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display power
+%Oct  9 11:02:24:292 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display ip routing-table
+%Oct  9 11:02:27:357 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display interface brief
+%Oct  9 11:02:30:268 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis version
+%Oct  9 11:02:33:351 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display log
+%Oct  9 11:02:36:475 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGOUT: VTY logged out from 172.16.158.241.
+%Oct  9 11:08:41:126 2019 3-1F-2S-160.56 LLDP/6/LLDP_DELETE_NEIGHBOR: Neighbor deleted on Port GigabitEthernet1/0/21 (IfIndex 9437204), Chassis ID is 4437-e634-1553, Port ID is 4437-e634-1553.
+%Oct  9 11:08:41:910 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is DOWN.
+%Oct  9 11:08:44:178 2019 3-1F-2S-160.56 IFNET/3/LINK_UPDOWN: GigabitEthernet1/0/21 link status is UP.
+%Oct  9 11:11:19:028 2019 3-1F-2S-160.56 SHELL/5/SHELL_LOGIN: VTY logged in from 172.16.158.241.
+%Oct  9 11:11:19:048 2019 3-1F-2S-160.56 SHELL/6/SHELL_SECLOG: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is super
+%Oct  9 11:11:19:092 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is screen-length dis
+%Oct  9 11:11:22:149 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display clock
+%Oct  9 11:11:25:157 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display cur
+%Oct  9 11:11:28:209 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display stp
+%Oct  9 11:11:31:210 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display stp brief
+%Oct  9 11:11:34:205 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display cpu-usage
+%Oct  9 11:11:37:196 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display memory
+%Oct  9 11:11:40:204 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display environment
+%Oct  9 11:11:43:266 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display fan
+%Oct  9 11:11:46:251 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display power
+%Oct  9 11:11:49:300 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display ip routing-table
+%Oct  9 11:11:52:350 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is display interface brief
+%Oct  9 11:11:55:301 2019 3-1F-2S-160.56 SHELL/6/SHELL_CMD: -Task=vt0-IPAddr=172.16.158.241-User=**; Command is dis version
+<3-1F-2S-160.56>
